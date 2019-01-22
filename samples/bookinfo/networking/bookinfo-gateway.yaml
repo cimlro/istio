@@ -25,13 +25,43 @@ spec:
   http:
   - match:
     - uri:
-        exact: /productpage
+      @REPLACE TEAMXX WITH YOUR TEAM NUMBER AND DELETE THIS LINE!!!@
+        exact: "/teamXX/productpage"
+    rewrite:
+      uri: "/productpage"
+    route:
+    - destination:
+        host: productpage
+        port:
+          number: 9080
+  - match:
     - uri:
-        exact: /login
+      @REPLACE TEAMXX WITH YOUR TEAM NUMBER AND DELETE THIS LINE!!!@
+        exact: "/teamXX/login"
+    rewrite:
+      uri: "/login"
+    route:
+    - destination:
+        host: productpage
+        port:
+          number: 9080
+  - match:
     - uri:
-        exact: /logout
+      @REPLACE TEAMXX WITH YOUR TEAM NUMBER AND DELETE THIS LINE!!!@
+        exact: "/teamXX/logout"
+    rewrite:
+      uri: "/logout"
+    route:
+    - destination:
+        host: productpage
+        port:
+          number: 9080
+  - match:
     - uri:
-        prefix: /api/v1/products
+      @REPLACE TEAMXX WITH YOUR TEAM NUMBER AND DELETE THIS LINE!!!@
+        prefix: "/teamXX/api/v1/products"
+    rewrite:
+      uri: "/api/v1/products"
     route:
     - destination:
         host: productpage
